@@ -1,20 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import bcryptjs from 'bcryptjs'
+
+import { jwt } from '@/utils'
+
 import User from '@/models/User'
 import { database } from '@/database'
-import { jwt } from '@/utils'
 
 type Data = 
 | { message: string }
-| {
-  token: string,
-  user: {
-    email: string,
-    role: string,
-    name: string
-  }
-}
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -44,17 +39,8 @@ export default async function handler(
 
   await database.disconnect()
 
-  const { _id } = defaultAdmin
-
-  const token = jwt.signToken( _id, process.env.USER_EMAIL)
-
   return res.status(200).json({
-    token,
-    user: {
-      email: process.env.USER_EMAIL, 
-      role: 'ADMIN', 
-      name: 'admin'
-    }
+    message: 'Usuario admin base creado'
   })
 
 }
