@@ -3,10 +3,17 @@ import { IDate } from '@/interfaces'
 
 
 const dateSchema = new Schema({
-  userId: { type: Schema.Types.ObjectId, ref: 'User', require: true },
   day:    { type: String, require: true },
   month:  { type: String, require: true },
   hour:   { type: String, requie: true },
+  dateState: {
+    type: String,
+    enum: {
+      values: ['TOTAL_PAIED', 'PARCIAL_PAIED', 'NO_PAIED'],
+      message: '{VALUE} no en un estado valido',
+      default: 'NO_PAIED'
+    }
+  },
 })
 
 const Date: Model<IDate> = mongoose.models.Date || model('Date', dateSchema)
