@@ -13,7 +13,8 @@
 /out/
 
 # production
-/build
+/
+mongo
 
 # misc
 .DS_Store
