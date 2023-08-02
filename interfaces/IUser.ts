@@ -4,7 +4,7 @@ import { IDate } from './IDate';
 
 
 export interface IUser {
-  _id?:           string
+  _id:           string
   name:          string,
   role:          userRoles
   email?:        string
