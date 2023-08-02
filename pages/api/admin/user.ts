@@ -1,13 +1,43 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { IUser } from '@/interfaces'
-
-import { createUser, deleteUserById, getAllUsers, updateInfoUser } from '@/database'
-import { userRoles } from '@/types'
 import { isValidObjectId } from 'mongoose'
+import User from '@/models/User'
 
-type Data = | { message: string } | IUser[] | IUser
+import { IUser } from '@/interfaces'
+import { userRoles } from '@/types'
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+import { createUser, database, deleteUserById, getAllUsers, updateInfoUser } from '@/database'
+import { isValidToken } from '@/utils/jwt'
+import { validateSession } from '@/utils'
+
+type Data = | { message: string } | IUser[] | { token: string, user: IUser} 
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+
+  const { token  = '' } = req.cookies as {token: string}
+
+  const isValidSession = await validateSession(token)
+
+  if( !isValidSession ) return res.status(400).json({message: 'No tienes un token de acceso valido'})
+
+  const id = await isValidToken(token)
+
+  if( !id ) return res.status(400).json({message: 'Error al validar token'})
+
+  await database.connect()
+
+  try {
+    const user = await User.findOne({ _id: id }).lean()
+
+    await database.disconnect()
+
+    if( !user) return res.status(400).json({message: 'No pudismos encontrar un usario con el token'})
+
+    if( user.role === 'CLIENT' ) return res.status(403).json({message: 'No tiene acceso a este end-point'})
+  } catch (error) {
+    await database.disconnect()
+    console.log(error)
+    return res.status(500).json({message: 'Error, verificar logs del servidor'})
+  }
   
   switch (req.method) {
     case 'GET':
@@ -22,7 +52,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     default:
       return res.status(400).json({ message: 'Bad Request'})
   }
-
 }
 
 const getUsers = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
@@ -39,11 +68,12 @@ const setUser = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   
   const { name = '', email = '', password = '', role = 'ADMIN' } = req.body as { name: string, email: string, password: string, role: userRoles }
 
-  const newUser = await createUser( name, email, password, role )
+  const data = await createUser( name, email, password, role )
 
-  return !newUser 
+
+  return !data 
     ? res.status(400).json({message: `Error al crear usuario con conrreo: ${email}, verificar logs del servidor para mas informacion`})
-    : res.status(200).json(newUser)
+    : res.status(200).json(data)
 }
 
 
@@ -72,5 +102,5 @@ const deleteUser = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
   return !userDeleted
     ? res.status(400).json({message: 'Error al eliminar usuario, veiricar losg del sistema'})
-    : res.status(200).json(userDeleted) 
+    : res.status(200).json({message: `Usuario con id: ${_id}, nombre: ${userDeleted.name}, email: ${userDeleted.email}, eliminado correctamente`}) 
 }

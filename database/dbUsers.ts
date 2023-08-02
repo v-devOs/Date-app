@@ -2,8 +2,8 @@ import User from "@/models/User"
 import { database } from "."
 import { userRoles } from "@/types"
 import bcryptjs from 'bcryptjs';
-import { isEmail } from "@/utils/validations";
-import { isValidObjectId } from "mongoose";
+import {  isValidEmail } from "@/utils/validations";
+import { jwt } from "@/utils";
 
 
 export const getAllUsers = async() => {
@@ -30,7 +30,7 @@ export const createUser = async ( name: string, email: string, password: string,
 
   if( password.length < 2 ) throw new Error ('La contraseña debe contener mas de 6 caracteres')
 
-  if( !isEmail(email) ) throw new Error ('Correo electronico no valido')
+  if( !isValidEmail(email) ) throw new Error ('Correo electronico no valido')
 
   try {
     await database.connect()
@@ -49,7 +49,15 @@ export const createUser = async ( name: string, email: string, password: string,
     await newUser.save()
     await database.disconnect()
 
-    return newUser
+    const { _id } = newUser
+
+    const token = jwt.signToken(_id, email)
+
+
+    return {
+      token,
+      user: newUser
+    }
 
   } catch (error) {
     await database.disconnect()
@@ -74,7 +82,13 @@ export const updateInfoUser = async ( _id: string, name: string, email: string, 
     await user.save()
     await database.disconnect()
 
-    return user
+    const token = jwt.signToken(_id, user.email)
+
+    return {
+      token,
+      user: user
+    }
+
   } catch (error) {
     await database.disconnect()
     console.log(error)

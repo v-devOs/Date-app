@@ -17,13 +17,14 @@ export const signToken = (_id: string, email: string ) => {
 }
 
 
-export const isValidToken = ( token: string ): Promise<string> => {
+export const isValidToken = ( token: string ): Promise<string | undefined> => {
+
   if( !process.env.JWT_SECRET_SEED ){
     throw new Error('No hay semilla de JWT')
   }
 
   if( token.length <= 10 ){
-    return Promise.reject('Token no valido')
+    return Promise.reject(undefined)
   }
 
 
@@ -32,14 +33,14 @@ export const isValidToken = ( token: string ): Promise<string> => {
     try {
       jwt.verify( token, process.env.JWT_SECRET_SEED || '', (err, payload) => {
 
-        if( err ) return reject('JWT no es valido')
+        if( err ) return reject(undefined)
 
         const { _id } = payload as { _id: string }
 
         resolve( _id )
       })
     } catch (error) {
-      reject('JWT no es valido')
+      reject(undefined)
     }
 
   })
