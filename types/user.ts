@@ -1,2 +1,2 @@
 
-export type userRoles = 'CLIENT' | 'TATOOER' | 'ADMIN'
+export type userRoles = 'CLIENT' | 'TATTOER' | 'ADMIN'

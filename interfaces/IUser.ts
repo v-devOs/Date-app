@@ -2,7 +2,7 @@ import { userRoles } from "@/types"
 import { ITatto } from "."
 import { IDate } from './IDate';
 
-type dateState = 'TOTAL_PAIED' | 'PARCIAL_PAIED'
+type dateState = 'TOTAL_PAIED' | 'PARCIAL_PAIED' | 'NO_PAIED'
 
 export interface IUser {
   _id:         string
