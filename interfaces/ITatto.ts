@@ -1,7 +1,6 @@
 
 
-export interface ITatoo {
-  _id: string
+export interface ITatto {
   img: string
   width: string
   heigth: string

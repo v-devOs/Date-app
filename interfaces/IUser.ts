@@ -1,5 +1,5 @@
 import { userRoles } from "@/types"
-import { ITatoo } from "."
+import { ITatto } from "."
 import { IDate } from './IDate';
 
 type dateState = 'TOTAL_PAIED' | 'PARCIAL_PAIED'
@@ -11,8 +11,7 @@ export interface IUser {
   email?:      string
   password?:   string
   dateState?:  dateState
-  tatooToDo?:  ITatoo 
+  tattoToDo?:  ITatto
   date?:       IDate
-  tatooer?:    IUser
-
+  tattoer?:    IUser
 }
