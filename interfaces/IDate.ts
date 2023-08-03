@@ -8,5 +8,6 @@ export interface IDate {
   day:         string
   month:       string
   hour:        string
+  code:        string
   dateState:   dateState
 }

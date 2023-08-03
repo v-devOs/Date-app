@@ -6,6 +6,7 @@ const dateSchema = new Schema({
   day:    { type: String, require: true },
   month:  { type: String, require: true },
   hour:   { type: String, requie: true },
+  code:   { type: String, require: true},
   dateState: {
     type: String,
     enum: {
