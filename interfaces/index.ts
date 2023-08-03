@@ -1,4 +1,4 @@
 
 export * from './IUser'
 export * from './ITatto'
-export * from './IDate'
+export * from './IAppointment'

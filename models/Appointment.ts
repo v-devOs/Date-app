@@ -1,11 +1,11 @@
 import mongoose, { Schema, model, Model } from 'mongoose'
-import { IDate } from '@/interfaces'
+import { IAppointment } from '@/interfaces'
 
 
-const dateSchema = new Schema({
-  day:    { type: String, require: true },
-  month:  { type: String, require: true },
-  hour:   { type: String, requie: true },
+const appointmentSchema = new Schema({
+  day:    { type: String, },
+  month:  { type: String, },
+  hour:   { type: String, },
   code:   { type: String, require: true},
   dateState: {
     type: String,
@@ -17,6 +17,6 @@ const dateSchema = new Schema({
   },
 })
 
-const Date: Model<IDate> = mongoose.models.Date || model('Date', dateSchema)
+const Appointment: Model<IAppointment> = mongoose.models.Date || model('Date', appointmentSchema)
 
-export default Date
+export default Appointment

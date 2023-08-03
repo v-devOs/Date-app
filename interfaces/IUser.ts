@@ -1,6 +1,6 @@
 import { userRoles } from "@/types"
 import { ITatto } from "."
-import { IDate } from './IDate';
+import { IDate } from './IAppointment';
 
 
 export interface IUser {
