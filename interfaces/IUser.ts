@@ -1,6 +1,4 @@
 import { userRoles } from "@/types"
-import { ITatto } from "."
-import { IDate } from './IAppointment';
 
 
 export interface IUser {
@@ -9,7 +7,4 @@ export interface IUser {
   role:          userRoles
   email?:        string
   password?:     string
-  tattoToDo?:    string | ITatto
-  date?:         string | IDate
-  tattoer?:      string | IUser
 }

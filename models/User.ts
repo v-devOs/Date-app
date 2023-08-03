@@ -6,9 +6,6 @@ const userSchema = new Schema({
   name:        { type: String, require: true },
   email:       { type: String },
   password:    { type: String },
-  tattoToDo:   { type: Schema.Types.ObjectId, ref: 'Tatto' },
-  date:        { type: Schema.Types.ObjectId, ref: 'Date' },
-  tattoer:     { type: Schema.Types.ObjectId, ref: 'User' },
   role: { 
     type: String,
     enum: {
