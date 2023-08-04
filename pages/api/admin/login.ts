@@ -29,7 +29,7 @@ const loginUser = async(req: NextApiRequest, res: NextApiResponse<Data>) => {
 
   if( !user ) return res.status(400).json({message: `No encontramos un usuario con email: ${email}`})
 
-  if( user.role === 'CLIENT' ) return res.status(403).json({message: 'No tienes acceso a este end-point'})
+  if( user.role !== 'ADMIN' && user.role !== 'TATTOER') return res.status(403).json({message: 'No tienes acceso a este end-point'})
 
   if( !bcryptjs.compareSync( password, user.password! )) return res.status(400).json({message: 'Error al validar credenciales'})
 
