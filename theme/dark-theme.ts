@@ -64,6 +64,15 @@ export const darkTheme = createTheme({
         color: '#fff',
         mr: 2,
       },
+      styleOverrides: {
+        root: {
+          ':hover': {
+            color: 'yellow',
+            transition: '1s',
+            borderBottom: '1px solid yellow'
+          }
+        }
+      }
     },
   }
 })

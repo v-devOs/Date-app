@@ -16,11 +16,11 @@ export const Navbar = () => {
         {
           linkHeaders.map( ({ tag, link }) => (
             <Link 
-              key={{ link }.link} 
-              href={{ link }.link}
-              sx={{ border: 'red', display: { xs: 'none', md: 'block'}}}
+              key={ link } 
+              href={ link }
+              sx={{ display: { xs: 'none', md: 'block'}}}
             >
-             { tag }
+              {tag}
             </Link>
           ))
         }

@@ -12,3 +12,16 @@
     width: 100%;
   }
 }
+
+.fade-in-animation{
+  animation: fadeIn linear 0.5s;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

@@ -25,7 +25,7 @@ export const HomeLayout: FC<Props> = ({ title, desc, children }) => {
         <Navbar/>
       </nav>
 
-      <main style={{ marginTop: '70px'}}>
+      <main style={{ marginTop: '70px'}} className="fade-in-animation">
         { children }
       </main>
     </>

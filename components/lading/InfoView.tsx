@@ -4,9 +4,15 @@ import { DecoratedTitle } from '../ui';
 
 
 const basicStylesCards: SxProps<Theme> = {
-  borderRadius: '20% 20px 10px 10px',
+  borderRadius: '20% 10px 10px 10px',
   width: { xs: 150, lg: 300}, 
   height: { xs: 150, lg: 300},
+}
+
+const basicStylesCardsLeft: SxProps<Theme> = {
+  ...basicStylesCards,
+  borderRadius: '10px 20% 10px 10px',
+
 }
 
 const stylesContainer: SxProps<Theme> = {
@@ -36,13 +42,13 @@ export const InfoCards = () => {
           component={'img'}
           alt='Personas tatuadas'
           src='/images/tatto-back-1.webp'
-          sx={{ ...basicStylesCards, mt: 8, mb: 2}}
+          sx={{ ...basicStylesCardsLeft, mt: 8, mb: 2}}
         />
         <CardMedia
           component={'img'}
           alt='Personas tatuadas'
           src='/images/tatto-back-1.webp'
-          sx={{...basicStylesCards}}
+          sx={{...basicStylesCardsLeft}}
         />
       </Grid>
 
