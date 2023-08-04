@@ -6,9 +6,8 @@ import { InfoCards } from '@/components/lading'
 const stylesContainerTitles: SxProps<Theme> = {
   background: 'linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)), url("/images/main-background.jpg")',
   p: 2,
-  minHeight: '80vh',
+  minHeight: '100vh',
 }
-
 
 
 const HomePage = () => {
@@ -19,17 +18,17 @@ const HomePage = () => {
         container
       >
         <Grid 
-          sx={{ textAlign: 'center'}}
+          sx={{ textAlign: 'center', mt: 10}}
           item
         >
           <Typography variant='h1' component='h1'>Nombre Estudio</Typography>
           <Typography variant='body1'>Tattos personalizados / Pircings</Typography>
         </Grid>
 
-        <Grid container>
+      </Grid>
+        <Grid container sx={{ p: 2, background: 'white', color: '#101010'}}>
           <InfoCards/>
         </Grid>
-      </Grid>
 
     </HomeLayout>
   )

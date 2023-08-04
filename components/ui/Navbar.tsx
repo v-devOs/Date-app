@@ -4,8 +4,7 @@ import { linkHeaders } from '.'
 
 export const Navbar = () => {
   return (
-    <AppBar
-    >
+    <AppBar>
       <Toolbar>
 
         <Link href='/'>
@@ -19,7 +18,7 @@ export const Navbar = () => {
             <Link 
               key={{ link }.link} 
               href={{ link }.link}
-              sx={{ border: 'red'}}
+              sx={{ border: 'red', display: { xs: 'none', md: 'block'}}}
             >
              { tag }
             </Link>

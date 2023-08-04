@@ -63,7 +63,6 @@ export const darkTheme = createTheme({
         underline: 'none',
         color: '#fff',
         mr: 2,
-        ml: 2,
       },
     },
   }

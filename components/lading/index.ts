@@ -1,1 +1,1 @@
-export * from './InfoCards'
+export * from './InfoView'

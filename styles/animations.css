@@ -1,0 +1,14 @@
+
+
+.divider-animation {
+  animation: appearFromLeft linear 1.5s;
+}
+
+@keyframes appearFromLeft{
+  from{
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
