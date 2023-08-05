@@ -2,6 +2,7 @@ import { UIState } from './';
 
 type UIActionType = 
 | { type: '[UI] - Toggle Side Menu' } 
+| { type: '[UI] - Toggle Modal'}
 
 export const uiReducer = ( state: UIState, action: UIActionType ): UIState => {
   
@@ -11,7 +12,12 @@ export const uiReducer = ( state: UIState, action: UIActionType ): UIState => {
         ...state,
         isOpenSideMenu: !state.isOpenSideMenu
       }
-
+    
+    case '[UI] - Toggle Modal':
+      return{
+        ...state,
+        isOpenModal: !state.isOpenModal
+      }
 
     default:
       return state;

@@ -29,14 +29,17 @@ const HomePage = () => {
       </Grid>
 
       <Grid container sx={{ p: 2, background: 'white', color: '#101010'}} className='appearWhenScroll'>
+        <div id='about-we'></div>
         <InfoCards/>
       </Grid>
 
       <Grid container sx={{ p: 2 }} className='appearWhenScroll'>
+        <div id='appointments'></div>
         <InfoAppointments/>
       </Grid>
 
       <Grid container sx={{p: 2, background: 'white', color: '#101010'}} className='appearWhenScroll'>
+        <div id='gallery'></div>
         <Gallery/>
       </Grid>
 

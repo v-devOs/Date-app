@@ -36,6 +36,9 @@ export const darkTheme = createTheme({
         },
         body1: {
           fontSize: 20
+        },
+        body2: {
+          fontSize: 17
         }
       }
     },

@@ -3,10 +3,12 @@ import { AppBar, Box, IconButton, Link, Toolbar, Typography } from '@mui/materia
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { linkHeaders } from '.'
 import { UIContext } from '@/context';
+import { useRouter } from 'next/router';
 
 export const Navbar = () => {
 
-  const { toggleSideMenu } = useContext(UIContext)
+  const { toggleSideMenuOrModal } = useContext(UIContext)
+
 
   return (
     <AppBar>
@@ -32,7 +34,7 @@ export const Navbar = () => {
 
         <Box sx={{ display: { xs: 'block', md: 'none'}, mt: 2}}>
           <IconButton
-            onClick={ toggleSideMenu }
+            onClick={ () =>  toggleSideMenuOrModal(true) }
           >
             <MenuOutlinedIcon/>
           </IconButton>

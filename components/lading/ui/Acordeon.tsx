@@ -57,7 +57,7 @@ const infoOptionsToCreateAppoitnment: optionsAppointment[] = [
           en cuestion de minutos tendras tu cita agendada
         </Typography>
       </Grid>,
-    link: '/dates'
+    link: '/appointments'
   },
 ]
 

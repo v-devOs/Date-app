@@ -10,17 +10,17 @@ const styleLink: SxProps<Theme> = {
 
 export const SideMenu = () => {
 
-  const { isOpenSideMenu, toggleSideMenu } = useContext(UIContext)
+  const { isOpenSideMenu, toggleSideMenuOrModal } = useContext(UIContext)
 
   return (
     <Drawer
       open={isOpenSideMenu}
-      onClose={ toggleSideMenu }
+      onClose={ () => toggleSideMenuOrModal( true ) }
       anchor="bottom"
       
     >
 
-      <ListItem onClick={toggleSideMenu}>
+      <ListItem onClick={() => toggleSideMenuOrModal( true )}>
         <Link 
           href='/' sx={{...styleLink, mt: 4, mb: 4}}>
           Nombre/Logo Estudio
@@ -35,7 +35,7 @@ export const SideMenu = () => {
         {
           linkHeaders.map(({ link, tag }) => (
 
-            <ListItem key={tag} onClick={toggleSideMenu}>
+            <ListItem key={tag} onClick={() => toggleSideMenuOrModal( true )}>
               <Link href={link} sx={styleLink}>
                 { tag }
               </Link>

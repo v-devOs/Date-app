@@ -3,18 +3,18 @@
 export const linkHeaders = [
   {
     tag: 'Contacto',
-    link: '#contact'
+    link: '/#contact'
   },
   {
     tag: 'Galeria',
-    link: '#galery'
+    link: '/#gallery'
   },
   {
     tag: 'Agendar cita',
-    link: '#appointments'
+    link: '/#appointments'
   },
   {
     tag: 'Acerca de nosotros',
-    link: '#about-we'
+    link: '/#about-we'
   },
 ]

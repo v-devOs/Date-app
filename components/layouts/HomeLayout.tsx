@@ -1,6 +1,6 @@
 import { FC } from "react"
 import Head from "next/head"
-import { Navbar, SideMenu } from "../ui"
+import { Modal, Navbar, SideMenu } from "../ui"
 
 
 interface Props{
@@ -26,6 +26,8 @@ export const HomeLayout: FC<Props> = ({ title, desc, children }) => {
       </nav>
 
       <SideMenu/>
+
+      <Modal showImage={false}/>
 
       <main style={{ marginTop: '70px'}} className="fade-in-animation">
         { children }
