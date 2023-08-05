@@ -1,76 +1,38 @@
 import React from 'react'
-import { dataToTest } from './dataToTestGallery';
-import { Box, CardContent, Grid, Typography } from '@mui/material';
-import Image from 'next/image';
+import { Box, Card, CardContent, Grid, Typography, CardMedia } from '@mui/material';
 import { DecoratedTitle } from '../ui';
+import { Carrousel } from './Carrousel';
+import { Collage } from './Collage';
+import { dataToTest, tattoersTest } from './dataToTestGallery';
 
 
 
 export const Gallery = () => {
   return (
     <>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12}>
 
         <DecoratedTitle title='Galeria'>
+          <Typography variant='h3' component='h3' sx={{ mb: 4}}>
+            Hecha un vistazo a algunos de los trabajos realizados por nuestros tatuadores,
+            nuestro equipo de trabajo realiza tataujes tanto coloridos, como a blanco y negro
+            con los estilos:  Id nisi nisi et cillum exercitation eiusmod adipisicing ea enim tempor.
 
+          </Typography>
         </DecoratedTitle>
+
       </Grid>
 
-      <Box sx={{ width: '100%', position: 'relative', display: { xs: 'flex', md: 'none'}, overflowX: 'scroll', scrollSnapType: 'x'}}>
-        {
-          dataToTest.map(({img, desc}, idx) => (
-            <CardContent
-              key={idx}
-              component='img'
-              src={img}
-              alt={desc}
-              sx={{ width: 300, height: 300, left: 0, position: 'sticky', objectFit: 'cover', scrollSnapAlign: 'center'}}
-            />
-          ))
-        }
-      </Box>
-
-      <Grid item lg={6} sx={{ display: {xs: 'none', md: 'block'}}}>
-        <Grid container sx={{ p: 2}}>
-          <Grid item md={6}>
-            {
-              dataToTest.map(( (data, idx) => {
-                
-                  return ( idx < (dataToTest.length / 2) ) 
-                    ? (
-                      <CardContent
-                        key={idx}
-                        component='img'
-                        src={data.img}
-                        alt={data.desc}
-                        sx={{ width: '100%', mt: 1, borderRadius: '20px'}}
-                      />
-                    )
-                    : <></>
-              }))
-            }
-          </Grid>
-
-          <Grid item md={6}>
-            {
-              dataToTest.map(( (data, idx) => {
-                
-                return ( idx >= (dataToTest.length / 2) ) 
-                  ? (
-                    <CardContent
-                      key={idx}
-                      component='img'
-                      src={data.img}
-                      alt={data.desc}
-                      sx={{ width: '100%', mt: idx === 4 ? 10 : 1,  borderRadius: '20px'}}
-                    />
-                  )
-                  : <></>
-              }))
-            }
-          </Grid>
-        </Grid>
+      <Grid item lg={6} sx={{ display: { xs: 'none', md: 'block'}}}>
+        <Collage imagesToShow={dataToTest}/>
       </Grid>
+
+      <Carrousel imagesToShow={dataToTest}/>
+
+      <Grid item lg={6} sx={{ display: { xs: 'none', md: 'block'}}}>
+        <Collage imagesToShow={dataToTest}/>
+      </Grid>
+      
     </>
   )
 }

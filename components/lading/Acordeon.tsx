@@ -13,8 +13,8 @@ interface optionsAppointment {
 
 const stylesAcordeon: SxProps<Theme> = {
   background: '#202020',
-  p: 2,
-  mb: 2,
+  // p: 2,
+  // mb: 2,
   mt: 2,
   display: 'flex',
   justifyContent: 'space-between',

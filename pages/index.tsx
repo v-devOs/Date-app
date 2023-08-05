@@ -7,7 +7,8 @@ import { DecoratedTitle } from '@/components/ui'
 const stylesContainerTitles: SxProps<Theme> = {
   background: 'linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)), url("/images/main-background.jpg")',
   p: 2,
-  minHeight: '100vh',
+  minHeight: '90vh',
+  maxHeight: '95vh'
 }
 
 
@@ -36,7 +37,7 @@ const HomePage = () => {
         <InfoAppointments/>
       </Grid>
 
-      <Grid container sx={{p: 2}}>
+      <Grid container sx={{p: 2, background: 'white', color: '#101010'}}>
         <Gallery/>
       </Grid>
 
