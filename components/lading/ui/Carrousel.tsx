@@ -14,11 +14,23 @@ export interface ImagesToShow{
 const stylesCarrousel: SxProps<Theme> = { 
   width: '100%', 
   position: 'relative', 
-  display: { xs: 'flex', md: 'none'}, 
+  display: { xs: 'flex', sm: 'none'}, 
   overflowX: 'scroll', 
   scrollSnapType: 'x',
-  mb: 4,
+  
+  // mb: 4,
   mt: 2
+}
+
+const styleItemsCarrousel: SxProps<Theme> = {
+  width: '70%', 
+  height: 300, 
+  left: 0, 
+  position: 'sticky', 
+  objectFit: 'cover', 
+  scrollSnapAlign: 'center',
+  borderRadius: '10px',
+  mr: 5
 }
 
 export const Carrousel: FC<Props> = ({ imagesToShow }) => {
@@ -32,7 +44,7 @@ export const Carrousel: FC<Props> = ({ imagesToShow }) => {
                 component='img'
                 src={img}
                 alt={desc}
-                sx={{ width: 400, height: 300, left: 0, position: 'sticky', objectFit: 'cover', scrollSnapAlign: 'center'}}
+                sx={styleItemsCarrousel}
               />
           ))
         }

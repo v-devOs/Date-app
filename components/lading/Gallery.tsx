@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box, Card, CardContent, Grid, Typography, CardMedia } from '@mui/material';
-import { DecoratedTitle } from '../ui';
-import { Carrousel } from './Carrousel';
-import { Collage } from './Collage';
-import { dataToTest, tattoersTest } from './dataToTestGallery';
+import { Grid, Typography, } from '@mui/material';
 
+import { DecoratedTitle } from '../ui';
+import { Collage, Carrousel } from './ui';
+
+import { dataToTest, tattoersTest } from './dataToTestGallery';
 
 
 export const Gallery = () => {
@@ -23,13 +23,13 @@ export const Gallery = () => {
 
       </Grid>
 
-      <Grid item lg={6} sx={{ display: { xs: 'none', md: 'block'}}}>
+      <Grid item lg={6} sx={{ display: { xs: 'none', sm: 'block'}}}>
         <Collage imagesToShow={dataToTest}/>
       </Grid>
 
       <Carrousel imagesToShow={dataToTest}/>
 
-      <Grid item lg={6} sx={{ display: { xs: 'none', md: 'block'}}}>
+      <Grid item lg={6} sx={{ display: { xs: 'none', sm: 'block'}}}>
         <Collage imagesToShow={dataToTest}/>
       </Grid>
       

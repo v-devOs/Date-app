@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Typography } from '@mui/material'
 import { DecoratedTitle } from '../ui'
-import { Acordeon } from '.'
+import { Acordeon } from './ui'
 
 export const InfoAppointments = () => {
   return (

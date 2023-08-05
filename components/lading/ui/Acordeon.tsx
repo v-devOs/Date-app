@@ -13,7 +13,7 @@ interface optionsAppointment {
 
 const stylesAcordeon: SxProps<Theme> = {
   background: '#202020',
-  // p: 2,
+  p: 2,
   // mb: 2,
   mt: 2,
   display: 'flex',
@@ -99,7 +99,7 @@ export const Acordeon = () => {
                   className='fade-in-animation'
                 >
                   <Typography variant='body1'>Comenzemos</Typography>
-                  <ArrowUpRight/>
+                  <ArrowUpRight sx={{ mt: 2}}/>
                 </Link>
               </Box>
             </Box>
