@@ -11,7 +11,7 @@ export const linkHeaders = [
   },
   {
     tag: 'Agendar cita',
-    link: '/dates'
+    link: '#appointments'
   },
   {
     tag: 'Acerca de nosotros',

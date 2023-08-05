@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Grid, SxProps, Theme, Typography } from '@mui/material'
 import { HomeLayout } from '@/components/layouts'
-import { InfoCards } from '@/components/lading'
+import { InfoAppointments, InfoCards } from '@/components/lading'
 
 const stylesContainerTitles: SxProps<Theme> = {
   background: 'linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)), url("/images/main-background.jpg")',
@@ -26,9 +26,14 @@ const HomePage = () => {
         </Grid>
 
       </Grid>
-        <Grid container sx={{ p: 2, background: 'white', color: '#101010'}}>
-          <InfoCards/>
-        </Grid>
+
+      <Grid container sx={{ p: 2, background: 'white', color: '#101010'}}>
+        <InfoCards/>
+      </Grid>
+
+      <Grid container sx={{ p: 2 }}>
+        <InfoAppointments/>
+      </Grid>
 
     </HomeLayout>
   )
