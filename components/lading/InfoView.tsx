@@ -22,7 +22,7 @@ const stylesContainer: SxProps<Theme> = {
 export const InfoCards = () => {
   return (
     <>
-      <Grid item xs={12} lg={3} sx={stylesContainer}>
+      <Grid item xs={12} md={3} sx={stylesContainer}>
           <CardMedia
             component={'img'}
             alt='Personas tatuadas'
@@ -37,7 +37,7 @@ export const InfoCards = () => {
           />
       </Grid>
 
-      <Grid item xs={12} lg={3} sx={stylesContainer}>
+      <Grid item xs={12} md={3} sx={stylesContainer}>
         <CardMedia
           component={'img'}
           alt='Personas tatuadas'
@@ -52,7 +52,7 @@ export const InfoCards = () => {
         />
       </Grid>
 
-      <Grid item xs={12} lg={6} >
+      <Grid item xs={12} md={6} >
         <DecoratedTitle title='Acerca de nosotros'>
           <Typography variant='body1'>
             In aute duis duis tempor ad magna incididunt dolor eiusmod. Cupidatat ut minim laborum do nisi mollit ea in qui enim cupidatat id officia. Do mollit culpa commodo sunt ipsum. Elit eiusmod ullamco esse minim qui amet ea elit incididunt ut culpa ut minim reprehenderit. Excepteur elit esse nostrud nostrud enim et. Cupidatat minim enim exercitation esse laboris amet consectetur do officia cillum pariatur dolor ad officia. Laborum fugiat labore excepteur esse voluptate aliquip.
