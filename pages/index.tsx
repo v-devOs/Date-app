@@ -28,15 +28,15 @@ const HomePage = () => {
 
       </Grid>
 
-      <Grid container sx={{ p: 2, background: 'white', color: '#101010'}}>
+      <Grid container sx={{ p: 2, background: 'white', color: '#101010'}} className='appearWhenScroll'>
         <InfoCards/>
       </Grid>
 
-      <Grid container sx={{ p: 2 }}>
+      <Grid container sx={{ p: 2 }} className='appearWhenScroll'>
         <InfoAppointments/>
       </Grid>
 
-      <Grid container sx={{p: 2, background: 'white', color: '#101010'}}>
+      <Grid container sx={{p: 2, background: 'white', color: '#101010'}} className='appearWhenScroll'>
         <Gallery/>
       </Grid>
 

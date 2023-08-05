@@ -1,5 +1,6 @@
-import { AppBar, Box, Link, Toolbar, Typography } from '@mui/material'
 import React from 'react'
+import { AppBar, Box, IconButton, Link, Toolbar, Typography } from '@mui/material'
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { linkHeaders } from '.'
 
 export const Navbar = () => {
@@ -24,6 +25,12 @@ export const Navbar = () => {
             </Link>
           ))
         }
+
+        <Box sx={{ display: { xs: 'block', md: 'none'}, mt: 2}}>
+          <IconButton>
+            <MenuOutlinedIcon/>
+          </IconButton>
+        </Box>
 
       </Toolbar>
     </AppBar>

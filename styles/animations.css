@@ -25,3 +25,45 @@
     opacity: 1;
   }
 }
+
+.appearWhenScroll{
+  view-timeline-name: --text;
+  view-timeline-axis: block;
+
+  animation-timeline: --text;
+  animation-name: appear;
+
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes appear {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+img{
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+    scale: 25%;
+  }
+  to{
+    opacity: 1;
+    scale: 100%;
+  }
+}

@@ -10,7 +10,6 @@ export const Collage: FC<Props> = ({ imagesToShow }) => {
   return (
     <>
         <Grid container sx={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', gap: 2}}>
-
           {
             imagesToShow.map( ( data, idx) => (
               <CardMedia
