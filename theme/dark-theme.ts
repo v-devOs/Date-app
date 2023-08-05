@@ -7,7 +7,7 @@ export const darkTheme = createTheme({
     mode: 'dark',
 
     primary: {
-      main: '#252525'
+      main: '#101010'
     },
 
     secondary: {
@@ -79,6 +79,13 @@ export const darkTheme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
+        }
+      }
+    },
+
+    MuiDrawer: {
+      styleOverrides: {
+        root: {
         }
       }
     }

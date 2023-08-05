@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AppBar, Box, IconButton, Link, Toolbar, Typography } from '@mui/material'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { linkHeaders } from '.'
+import { UIContext } from '@/context';
 
 export const Navbar = () => {
+
+  const { toggleSideMenu } = useContext(UIContext)
+
   return (
     <AppBar>
       <Toolbar>
@@ -27,7 +31,9 @@ export const Navbar = () => {
         }
 
         <Box sx={{ display: { xs: 'block', md: 'none'}, mt: 2}}>
-          <IconButton>
+          <IconButton
+            onClick={ toggleSideMenu }
+          >
             <MenuOutlinedIcon/>
           </IconButton>
         </Box>
