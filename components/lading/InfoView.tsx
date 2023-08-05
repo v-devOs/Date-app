@@ -5,8 +5,8 @@ import { DecoratedTitle } from '../ui';
 
 const basicStylesCards: SxProps<Theme> = {
   borderRadius: '20% 10px 10px 10px',
-  width: { xs: 150, lg: 300}, 
-  height: { xs: 150, lg: 300},
+  width: '90%',
+  height: { md: 200, lg: 300}
 }
 
 const basicStylesCardsLeft: SxProps<Theme> = {
@@ -22,34 +22,39 @@ const stylesContainer: SxProps<Theme> = {
 export const InfoCards = () => {
   return (
     <>
-      <Grid item xs={12} md={3} sx={stylesContainer}>
-          <CardMedia
-            component={'img'}
-            alt='Personas tatuadas'
-            src='/images/tatto-back-1.webp'
-            sx={{...basicStylesCards, mb: 2}}
-          />
-          <CardMedia
-            component={'img'}
-            alt='Personas tatuadas'
-            src='/images/tatto-back-1.webp'
-            sx={{...basicStylesCards}}
-          />
-      </Grid>
 
-      <Grid item xs={12} md={3} sx={stylesContainer}>
-        <CardMedia
-          component={'img'}
-          alt='Personas tatuadas'
-          src='/images/tatto-back-1.webp'
-          sx={{ ...basicStylesCardsLeft, mt: 8, mb: 2}}
-        />
-        <CardMedia
-          component={'img'}
-          alt='Personas tatuadas'
-          src='/images/tatto-back-1.webp'
-          sx={{...basicStylesCardsLeft}}
-        />
+      <Grid item xs={12} md={6} sx={stylesContainer}>
+        <Grid container>
+
+          <Grid item md={6}>
+            <CardMedia
+              component={'img'}
+              alt='Personas tatuadas'
+              src='/images/tatto-back-1.webp'
+              sx={{...basicStylesCards, mb: 2}}
+            />
+            <CardMedia
+              component={'img'}
+              alt='Personas tatuadas'
+              src='/images/tatto-back-1.webp'
+              sx={{...basicStylesCards}}
+            />
+          </Grid>
+          <Grid item md={6}>
+            <CardMedia
+              component={'img'}
+              alt='Personas tatuadas'
+              src='/images/tatto-back-1.webp'
+              sx={{ ...basicStylesCardsLeft, mt: 8, mb: 2}}
+            />
+            <CardMedia
+              component={'img'}
+              alt='Personas tatuadas'
+              src='/images/tatto-back-1.webp'
+              sx={{...basicStylesCardsLeft}}
+            />
+          </Grid>
+        </Grid>
       </Grid>
 
       <Grid item xs={12} md={6} >

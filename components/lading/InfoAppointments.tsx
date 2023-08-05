@@ -9,7 +9,7 @@ export const InfoAppointments = () => {
       <Grid 
         item
         xs={12}
-        lg={6}
+        md={6}
       >
         <DecoratedTitle title='¿Quieres agendar una cita?' useColorAlternative>
           <Typography variant='h3' component='h3'>Puedes hacerlo de estas maneras</Typography>
@@ -26,7 +26,7 @@ export const InfoAppointments = () => {
       <Grid 
         item
         xs={12}
-        lg={6}
+        md={6}
         sx={{p: { xs: 0, md: 2 }, mb: 4}}
       >
         <Acordeon/>
