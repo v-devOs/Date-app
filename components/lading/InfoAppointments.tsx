@@ -27,7 +27,7 @@ export const InfoAppointments = () => {
         item
         xs={12}
         lg={6}
-        sx={{p: { xs: 0, md: 4 }}}
+        sx={{p: { xs: 0, md: 2 }, mb: 4}}
       >
         <Acordeon/>
       </Grid>

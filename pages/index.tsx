@@ -1,8 +1,7 @@
 import React from 'react'
-import { Box, Grid, SxProps, Theme, Typography } from '@mui/material'
+import {  Grid, SxProps, Theme, Typography } from '@mui/material'
 import { HomeLayout } from '@/components/layouts'
 import { Gallery, InfoAppointments, InfoCards } from '@/components/lading'
-import { DecoratedTitle } from '@/components/ui'
 
 const stylesContainerTitles: SxProps<Theme> = {
   background: 'linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)), url("/images/main-background.jpg")',

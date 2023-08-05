@@ -81,7 +81,7 @@ export const Acordeon = () => {
             key={key} 
             sx={stylesAcordeon}
             fullWidth
-            variant='text'
+            variant='contained'
           >
             <Typography variant='h3' component='h3'>{ option }</Typography>
       
