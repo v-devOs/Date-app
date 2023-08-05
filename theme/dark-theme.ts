@@ -78,7 +78,7 @@ export const darkTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none'
+          textTransform: 'none',
         }
       }
     }

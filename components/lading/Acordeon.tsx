@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react'
-import { Box, Button, Grid, IconButton, SxProps, Theme, Typography, keyframes } from '@mui/material'
+import { Box, Button, Grid, IconButton, Link, SxProps, Theme, Typography, keyframes } from '@mui/material'
 import ArrowDown from '@mui/icons-material/KeyboardDoubleArrowDownOutlined';
 import ArrowUpRight from '@mui/icons-material/ArrowOutwardOutlined';
 
@@ -19,7 +19,8 @@ const stylesAcordeon: SxProps<Theme> = {
   display: 'flex',
   justifyContent: 'space-between',
   borderRadius: '10px',
-  cursor: 'pointer',
+  color: 'white',
+  flexWrap: 'wrap'
 }
 
 const stylesDescAcordeon: SxProps<Theme> = {
@@ -73,40 +74,38 @@ export const Acordeon = () => {
 
   return (
     <>
-
       {
-        infoOptionsToCreateAppoitnment.map(({ desc, option, link, key  }) => (
-          <Grid 
-            container 
+        infoOptionsToCreateAppoitnment.map(({ desc, option, key, link  }) => (
+          <Button 
+            onClick={() => onChangeKeyAcordeon(key) }
             key={key} 
             sx={stylesAcordeon}
-            onClick={ () => onChangeKeyAcordeon(key) }
+            fullWidth
+            variant='text'
           >
             <Typography variant='h3' component='h3'>{ option }</Typography>
       
-            <IconButton>
+            <Box>
               <ArrowDown/>
-            </IconButton>
+            </Box>
 
             <Box sx={{ display: keyAcordeon === key ? 'block' : 'none'}}>
-              {
-                desc
-              }
+              { desc }
 
-              <Button 
-                sx={{ color: 'white', border: '1px solid red', mt: 3, display: link ? 'flex': 'none'}} 
-                endIcon={<ArrowUpRight/>}
-                fullWidth
-              >
-                <Typography variant='body2'>Comenzemos</Typography>
-              </Button>
+              <Box sx={{ display: link ? 'block': 'none', borderRadius: '5px'}}>
+                <Link 
+                  sx={{ display: 'flex', justifyContent: 'center', background: 'white', color: '#101010', p: 1, cursor: 'pointer', width: '100%'}}
+                  href={link}
+                  className='fade-in-animation'
+                >
+                  <Typography variant='body1'>Comenzemos</Typography>
+                  <ArrowUpRight/>
+                </Link>
+              </Box>
             </Box>
-            
-          </Grid>
+          </Button>
         ))
       }
-
-
     </>
   )
 }
