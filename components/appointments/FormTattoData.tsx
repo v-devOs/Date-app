@@ -5,7 +5,7 @@ export const FormTattoData = () => {
   return (
     <>
       <Typography variant='h3' component='h3'>Sube la imagen de tu tatto y su informacion</Typography>
-      <Box sx={{ display: 'flex', gap: 2, mb: 3}}>
+      <Box sx={{ display: 'flex', gap: 2, mb: 3, flexWrap: 'wrap'}}>
         <TextField
           label='Imagen'
           placeholder='Juan Perez'

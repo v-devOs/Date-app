@@ -5,7 +5,7 @@ export const FormBasicData = () => {
   return (
     <>
       <Typography variant='h3' component='h3'>Ingresa los siguiente datos</Typography>
-      <Box sx={{ display: 'flex', gap: 2}}>
+      <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap'}}>
         <TextField
           label='Nombre'
           placeholder='Juan Perez'
