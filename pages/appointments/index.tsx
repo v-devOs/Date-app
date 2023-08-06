@@ -12,7 +12,7 @@ const AppointmentsHomePage = () => {
     >
       <Modal showImage={false}/>
 
-      <Grid container>
+      <Grid container className='fade-in-animation'>
         <Grid container sx={{ bgcolor: '#202020', m:2, p: 2, borderRadius: '5px'}} >
 
           <Grid item mb={2} xs={12}>
