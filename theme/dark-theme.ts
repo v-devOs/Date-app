@@ -7,7 +7,7 @@ export const darkTheme = createTheme({
     mode: 'dark',
 
     primary: {
-      main: '#101010'
+      main: '#fff'
     },
 
     secondary: {
@@ -22,7 +22,8 @@ export const darkTheme = createTheme({
   components: {
     MuiTypography: {
       defaultProps: {
-        mt: 2
+        mt: 2,
+        mb: 2
       },
       styleOverrides: {
         h1: {

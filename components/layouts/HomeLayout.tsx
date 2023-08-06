@@ -27,7 +27,6 @@ export const HomeLayout: FC<Props> = ({ title, desc, children }) => {
 
       <SideMenu/>
 
-      <Modal showImage={false}/>
 
       <main style={{ marginTop: '70px'}} className="fade-in-animation">
         { children }

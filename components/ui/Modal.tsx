@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useEffect } from 'react';
 import { UIContext } from '@/context';
 
 import { Box, SxProps, Theme, Typography } from '@mui/material';
@@ -16,6 +16,7 @@ const style: SxProps<Theme> = {
 };
 
 interface Props{
+
   showImage:  boolean
   img? :      string
 }
@@ -23,6 +24,8 @@ interface Props{
 export const Modal: FC<Props> = () =>  {
 
   const { isOpenModal, toggleSideMenuOrModal } = useContext(UIContext)
+
+
 
   return (
     <Box>
